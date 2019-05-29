@@ -1,10 +1,13 @@
-% This LaTeX class is created by TomBen. © 2018-2019 Copyright. All Rights Reserved.
-% If you have questions, please open terminal on your computer and enter "texdoc [package name]" you can solve almost 95 percent of questions. And contact me at me@tomben.me is also available if I understand what you ask. All suggestions are welcome~
-% And you can download the latest version at https://github.com/TomBener/Myart-Myrep-Template.
-% Happy LaTeXing.  Enjoy it!
+%% ---------------------------------------------------------------------------------------------------
+%% This LaTeX class is created by TomBen. © 2018-2019 Copyright. All Rights Reserved.
+%% If you have questions, please open terminal on your computer and enter "texdoc [package name]" you can solve almost 95 percent of questions. And contact me at me@tomben.me is also available if I understand what you ask. All suggestions are welcome~
+%% And you can download the latest version at https://github.com/TomBener/Myart-Myrep-Template.
+%% Happy LaTeXing. Enjoy it!
+%% ---------------------------------------------------------------------------------------------------
 
-% !TEX program = xelatex
-% !Mode:: "TeX:UTF-8"
+%% !TEX program = xelatex
+%% !Mode:: "TeX:UTF-8"
+
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{myart}[myart class]

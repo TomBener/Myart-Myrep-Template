@@ -4,10 +4,11 @@
 % Happy LaTeXing.  Enjoy it!
 
 % !TEX program = xelatex
+% !Mode:: "TeX:UTF-8"
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{myart}[myart class]
-% Created on 2018/11/24, Last Updated on 2019/5/28
+% Created on 2018/11/24, Last Updated on 2019/5/29
 
 \LoadClass[12pt, a4paper]{ctexart}
 

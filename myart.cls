@@ -47,7 +47,7 @@
 %\RequirePackage[T1]{fontenc}
 %\RequirePackage{stix2} % 设置数学公式字体为 stix2
 
-\setCJKmainfont{SimSun} % 全局主要中文字体为宋体
+\setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi]{SimSun} % 全局主要中文字体为宋体，粗体为黑体，斜体为楷体
 \setCJKsansfont[BoldFont=STHeiti]{STXihei}
 \setCJKmonofont{STZhongsong}
 

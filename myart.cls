@@ -209,6 +209,7 @@
 \definecolor{geye}{RGB}{199,237,204} % 绿豆沙护眼色
 \definecolor{apricot}{RGB}{246,239,218} % 杏黄护眼色
 %\pagecolor{apricot} % 页面背景色
+\definecolor{spotblue}{RGB}{0,51,153}
 
 \RequirePackage{textcomp} % \textyen 人民币 ¥ 等符号
 \RequirePackage{fontawesome} % 添加各种图标 icon

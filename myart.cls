@@ -42,10 +42,8 @@
 \RequirePackage{newtxtext, newtxmath} % 设置西文、数学公式字体为 Times 样式
 
 \setCJKmainfont[BoldFont = SourceHanSerifSC-Bold,
-				ItalicFont = STKaiti]
-				{SourceHanSerifSC-Regular} % 全局中文字体为思源宋体和华文楷体
-\setCJKsansfont[BoldFont=STHeiti]{STXihei}
-\setCJKmonofont{STZhongsong}
+        ItalicFont = KaiTi]
+        {SourceHanSerifSC-Regular} % 全局中文字体为思源宋体和楷体
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 要求系统中安装下列字体，否则注释掉未安装字体
 \newcommand{\utopia}{\fontspec{UtopiaStd-Regular}} % 单独设置一部分英文字体为 UtopiaStd-Regular

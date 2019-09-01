@@ -11,7 +11,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{myart}[myart class]
-% Created on 2018/11/24, Last Updated on 2019/5/29
+% Initiated on 2018/11/24, Last Updated on 2019/9/1
 
 \LoadClass[12pt, a4paper]{ctexart}
 
@@ -33,25 +33,21 @@
 \RequirePackage{lipsum, zhlipsum, mwe} % 生成随机文字
 \RequirePackage{ulem} % \uline 命令生成自动换行的下划线
 \newcommand\bolduline{\bgroup\markoverwith{\rule[-0.7ex]{1cm}{0.8pt}}\ULon} % 定义粗下划线 \bolduline
+\RequirePackage{dashrule} % 画虚线，例如 \hdashrule{\linewidth}{0.5pt}{3pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中文、西文、数学及其他字体设置
 \RequirePackage{fontspec} % 调用系统安装字体
-%\setmainfont{Times New Roman} % 全局西文字体为 Times New Roman
 
 \RequirePackage[T1]{fontenc}
-\RequirePackage{mathptmx} % 设置全局西文字体为 Times 样式
+\RequirePackage{newtxtext, newtxmath} % 设置西文、数学公式字体为 Times 样式
 
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage{newtxtext, newtxmath} % 设置西文、数学公式字体为 Times 样式
-
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage{stix2} % 设置数学公式字体为 stix2
-
-\setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi]{SimSun} % 全局主要中文字体为宋体，粗体为黑体，斜体为楷体
+\setCJKmainfont[BoldFont = SourceHanSerifSC-Bold,
+				ItalicFont = STKaiti]
+				{SourceHanSerifSC-Regular} % 全局中文字体为思源宋体和华文楷体
 \setCJKsansfont[BoldFont=STHeiti]{STXihei}
 \setCJKmonofont{STZhongsong}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 要求系统中安装下列字体
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 要求系统中安装下列字体，否则注释掉未安装字体
 \newcommand{\utopia}{\fontspec{UtopiaStd-Regular}} % 单独设置一部分英文字体为 UtopiaStd-Regular
 \newcommand{\palatino}{\fontspec{Palatino}} % 单独设置一部分英文字体为 Palatino
 \newcommand{\optima}{\fontspec{Optima}} % 单独设置一部分英文字体为 Optima
@@ -71,27 +67,34 @@
 \setCJKfamilyfont{xingkai}{STXingkai}
 \newcommand{\xingkai}{\CJKfamily{xingkai}} % 单独设置一部分中文字体为行楷
 
-\setCJKfamilyfont{shouzha}{HannotateSC-W5}
-\newcommand{\shouzha}{\CJKfamily{shouzha}} % 单独设置一部分中文字体为手札体
+% 将数学字体宏包的求和、求积、积分等改回默认的 Computer Modern 字体
+% \sum
+\DeclareSymbolFont{largesymbolsCM}{OMX}{cmex}{m}{n}
+\let\txsum\sum
+\let\sum\relax
+\DeclareMathSymbol{\sum}{\mathop}{largesymbolsCM}{"50}
+% \infty
+\DeclareSymbolFont{symbolsCM}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsCM}{bold}{OMS}{cmsy}{b}{n}
+\let\txinfty\infty
+\DeclareMathSymbol{\infty}{\mathord}{symbolsCM}{"31}
+% \partial, \pi
+\DeclareSymbolFont{lettersCM}{OML}{cmm} {m}{it}
+\SetSymbolFont{lettersCM}{bold}{OML}{cmm} {b}{it}
+\let\txpartial\partial
+\DeclareMathSymbol{\partial}{\mathord}{lettersCM}{"40}
+\let\txpi\pi
+\DeclareMathSymbol{\pi}{\mathord}{lettersCM}{"19}
+% int 
+\RequirePackage{esint}
 
-% 将数学字体宏包的操作符（求和、求积、积分）改回默认的 Computer Modern 字体
-\DeclareSymbolFont{cmlargesymbols}{OMX}{cmex}{m}{n}
-\DeclareMathSymbol{\intop}{\mathop}{cmlargesymbols}{"5A}
-  \def\int{\intop\nolimits}
-\DeclareMathSymbol{\ointop}{\mathop}{cmlargesymbols}{"49}
-  \def\oint{\ointop\nolimits}
-\DeclareMathSymbol{\sumop}{\mathop}{cmlargesymbols}{"58}
-  \let\sum\sumop
-\DeclareMathSymbol{\prodop}{\mathop}{cmlargesymbols}{"59}
-  \let\prod\prodop
-
-\everymath{\displaystyle} % 全部数学公式为 displaystyle 样式
+\everymath{\displaystyle} % 全文数学公式为 displaystyle 样式
 
 % 定义对数常数 e，虚数符号 i, j 以及微分算子 d 为直立体等
 \newcommand{\me}{\mathrm{e}}
 \newcommand{\mi}{\mathrm{i}}
 \newcommand{\mj}{\mathrm{j}}
-\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand{\md}{\mathop{}\!\mathrm{d}}
 \newcommand{\mt}{$\mathrm{m}^2$}
 
 \RequirePackage{hologo} % 生成 LaTeX 样式文字
@@ -167,7 +170,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 图、表浮动体标题设置
 \RequirePackage{caption}
 \captionsetup{
-	hypcap=true, % 链接跳转到图片而不是标题
+	hypcap=true, % 链接跳转到浮动体本身
 	font={bf, footnotesize}, % 字体为脚注字体、粗体
 	%labelsep=period,
 }
@@ -233,9 +236,6 @@
 \RequirePackage{makeidx}
 \makeindex % 激活索引功能, 该命令不可省略
 
-%\RequirePackage[Conny]{fncychap} % 定制章节样式
-%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
-
 % 列表编号 list/itemize/enumerate 设置
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
@@ -274,8 +274,6 @@
 % 也可使用 ctex 中的 \beforeskip 和 \afterskip 来控制章节标题与上下之间的垂直距离
 \renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftdotsep}} % 目录中 section 后加上引导点
 
-%\RequirePackage[super]{natbib}
-%\bibliographystyle{unsrt}
 \RequirePackage{gbt7714} % 国标参考文献
 \setlength{\bibsep}{3pt} % 参考文献行距
 \def\bibfont{\small} % 参考文献字号

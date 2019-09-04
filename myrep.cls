@@ -27,6 +27,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Basic Packages
+\RequirePackage[l2tabu, orthodox]{nag} % 检测淘汰宏包和过时命令
 \RequirePackage{amsmath, amsfonts, amssymb} % AMS 宏集
 \RequirePackage{bm} % 粗体数学符号
 \RequirePackage{upgreek} % 直立小写希腊字母
@@ -215,6 +216,7 @@
 %\pagecolor{apricot} % 页面背景色
 \definecolor{spotblue}{RGB}{0,51,153}
 
+\RequirePackage{siunitx} % 各种单位符号
 \RequirePackage{textcomp} % \textyen 人民币 ¥ 等符号
 \RequirePackage{fontawesome} % 添加各种图标 icon
 %\RequirePackage{awesomebox} % 制作提示框

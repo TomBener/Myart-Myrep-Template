@@ -312,7 +312,7 @@
 	pdfcreator={LaTeX with myrep class},
 	pdftitle={},
 	pdfsubject={},
-	pdfauthor={任涛},
+	pdfauthor={},
 	pdfkeywords={},
 } % 设置链接参数
 

@@ -1,3 +1,3 @@
-# Myart-Myrep-Template
+# LaTeX Template
 
-LaTeX article and report template based on ctex for simple writing.
+LaTeX article, report and beamer template for my own simple writing.

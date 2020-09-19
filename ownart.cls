@@ -1,7 +1,7 @@
 %% ---------------------------------------------------------------------------------------------------
-%% This LaTeX class is created by TomBen. © 2018-2019 Copyright. All Rights Reserved.
-%% If you have questions, please open terminal on your computer and enter "texdoc [package name]" you can solve almost 95 percent of questions. And contact me at me@tomben.me is also available if I understand what you ask. All suggestions are welcome~
-%% And you can download the latest version at https://github.com/TomBener/Myart-Myrep-Template.
+%% This LaTeX class is created by TomBen. © 2018-2020 Copyright. All Rights Reserved.
+%% If you have questions, please open terminal on your computer and enter "texdoc [package name]" you can solve almost 95 percent of questions. And contact me at me@retompi.com is also available if I understand what you ask. All suggestions are welcome ~
+%% And you can download the latest version at https://github.com/TomBener/latex-template.
 %% Happy LaTeXing. Enjoy it!
 %% ---------------------------------------------------------------------------------------------------
 
@@ -10,8 +10,8 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{myart}[myart class]
-% Initiated on 2018/11/24, Last Updated on 2019/9/1
+\ProvidesClass{ownart}[ownart class]
+% Initiated on 2018/11/24, Last Updated on 2020/09/19
 
 \LoadClass[12pt, a4paper]{ctexart}
 
@@ -33,7 +33,7 @@
 \RequirePackage{upgreek} % 直立小写希腊字母
 \RequirePackage{lipsum, zhlipsum, mwe} % 生成随机文字
 \RequirePackage{ulem} % \uline 命令生成自动换行的下划线
-\newcommand\bolduline{\bgroup\markoverwith{\rule[-0.7ex]{1cm}{0.8pt}}\ULon} % 定义粗下划线 \bolduline
+%\newcommand\bolduline{\bgroup\markoverwith{\rule[-0.7ex]{1cm}{0.8pt}}\ULon} % 定义粗下划线 \bolduline
 \RequirePackage{dashrule} % 画虚线，例如 \hdashrule{\linewidth}{0.5pt}{3pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中文、西文、数学及其他字体设置
@@ -41,6 +41,9 @@
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage{newtxtext, newtxmath} % 设置西文、数学公式字体为 Times 样式
+%\usepackage[llscale=1.1,
+%      defaultfeatures={Ligatures=NoCommon}
+%      ]{libertine}
 
 \setCJKmainfont[BoldFont = SourceHanSerifSC-Bold,
         ItalicFont = KaiTi]
@@ -296,10 +299,10 @@
 \hypersetup{
 	pdfborder={0 0 0},
 	%pdfproducer={},
-	pdfcreator={LaTeX with myart class},
+	pdfcreator={LaTeX with ownart class},
 	pdftitle={},
 	pdfsubject={},
-	pdfauthor={任涛},
+	pdfauthor={},
 	pdfkeywords={},
 } % 设置链接参数
 

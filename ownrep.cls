@@ -38,9 +38,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中文、西文、数学及其他字体设置
 \RequirePackage{fontspec} % 调用系统安装字体
-%\setmainfont{Times New Roman} % 全局西文字体为 Times New Roman
+%\setmainfont{Times New Roman}
+% My favoriate 3 western fonts
+%\setmainfont{EBGaramond12-Regular}
+%\setmainfont{MinionPro-Regular}
+%\setmainfont{LibertinusSerif-Regular}
 
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc}
 \RequirePackage{newtxtext, newtxmath} % 设置西文、数学公式字体为 Times 样式
 
 %\RequirePackage[T1]{fontenc}

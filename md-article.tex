@@ -1,0 +1,189 @@
+\documentclass[12pt, a4paper]{ctexart}
+
+\ctexset{
+	section = {
+	format = \raggedright\Large\bfseries,
+	%number = \chinese{section}、
+},
+	%part/numbering = false,
+	%subsection/numbering = false,
+}
+
+\usepackage{amsmath, amsfonts, amssymb}  % AMS 宏集
+
+%\usepackage{fontspec} % 调用系统安装字体
+%\setmainfont{Times New Roman}
+% My favoriate 3 western fonts
+%\setmainfont{EBGaramond12-Regular}
+%\setmainfont{MinionPro-Regular}
+\setmainfont{LibertinusSerif-Regular}
+
+%\usepackage[T1]{fontenc}
+\usepackage{newtxmath} % 设置西文、数学公式字体为 Times 样式
+%\usepackage[llscale=1.1,
+%      defaultfeatures={Ligatures=NoCommon}
+%      ]{libertine}
+
+% 将数学字体宏包的求和、求积、积分等改回默认的 Computer Modern 字体
+% \sum
+\DeclareSymbolFont{largesymbolsCM}{OMX}{cmex}{m}{n}
+\let\txsum\sum
+\let\sum\relax
+\DeclareMathSymbol{\sum}{\mathop}{largesymbolsCM}{"50}
+% \infty
+\DeclareSymbolFont{symbolsCM}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsCM}{bold}{OMS}{cmsy}{b}{n}
+\let\txinfty\infty
+\DeclareMathSymbol{\infty}{\mathord}{symbolsCM}{"31}
+% \partial, \pi
+\DeclareSymbolFont{lettersCM}{OML}{cmm} {m}{it}
+\SetSymbolFont{lettersCM}{bold}{OML}{cmm} {b}{it}
+\let\txpartial\partial
+\DeclareMathSymbol{\partial}{\mathord}{lettersCM}{"40}
+\let\txpi\pi
+\DeclareMathSymbol{\pi}{\mathord}{lettersCM}{"19}
+% int 
+\usepackage{esint}
+
+\setCJKmainfont[BoldFont = SourceHanSerifSC-Bold,
+        ItalicFont = KaiTi]
+        {SourceHanSerifSC-Regular} % 全局中文字体为思源宋体和楷体
+
+
+\usepackage{microtype} % 改善单词、字母的间距
+\usepackage{setspace} % 间距宏包
+%\linespread{1.3} % ctex 默认行距 1.5 倍
+
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry} % 页边距
+\usepackage{lscape} % 页面横排
+
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\chead{\footnotesize{}}
+%\lhead{}
+%\rhead{}
+%\cfoot{\zihao{5} \thepage}
+%\renewcommand{\headrulewidth}{0.8pt} % 页眉线宽，设为 0 可去掉页眉线
+%\renewcommand{\footrulewidth}{0pt}
+\pagestyle{plain} % 页眉为空，页脚为页码
+\setlength{\footskip}{1.5cm} % 正文底部到页脚距离
+
+\usepackage{array}
+\usepackage{booktabs} % 三线表格
+\usepackage{multirow} % 多行表格
+\usepackage{multicol} % 多列表格
+\usepackage{longtable} % 分页表格
+\usepackage{minted}  % 高亮代码
+
+\usepackage{graphicx}
+\graphicspath{{../figures/}{images/}{figures/}{fig/}{img/}}  % 图片文件夹路径
+%\setkeys{Gin}{width = .8\linewidth}  % 控制图片宽度
+
+\usepackage{fontawesome5} % 添加各种图标 icon
+
+
+% 脚注编号使用带圈数字
+\usepackage{pifont}
+\newcommand*\dingctr[1]{
+\protect\ding{\number\numexpr\value{#1}+171\relax}}
+\renewcommand*\thefootnote{\dingctr{footnote}}
+\makeatletter
+
+% 脚注编号和文字同高
+\renewcommand\@makefntext[1]{
+\setlength\leftskip{1.2\ccwd}
+\setlength\parindent{2\ccwd}\selectfont
+\noindent\llap{\@thefnmark\ }#1}
+\makeatother
+
+\usepackage{makeidx}
+\makeindex % 激活索引功能, 该命令不可省略
+
+% 列表编号 list/itemize/enumerate 设置
+\usepackage[shortlabels]{enumitem}
+\setlist{nolistsep}
+
+\usepackage{gbt7714} % 国标参考文献
+\bibliographystyle{gbt7714-author-year}
+\setlength{\bibsep}{3pt} % 参考文献行距
+\def\bibfont{\small} % 参考文献字号
+
+\usepackage{appendix} % 附录
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+\definecolor{darkblue}{rgb}{0,0,0.3}
+\definecolor{citered}{rgb}{.5,0,.5}  % 紫色
+\definecolor{urlblue}{rgb}{0.19,0.54,0.92} % 浅蓝色
+\definecolor{winered}{rgb}{0.5,0,0} % 血红色
+\definecolor{moto}{RGB}{204,232,207} % 浅绿护眼色
+\definecolor{geye}{RGB}{199,237,204} % 绿豆沙护眼色
+\definecolor{apricot}{RGB}{246,239,218} % 杏黄护眼色
+%\pagecolor{apricot} % 页面背景色
+\definecolor{spotblue}{RGB}{0,51,153}
+
+%%%%%%%%%%%%%%%%%%%% hyperref 宏包设置
+\usepackage[
+	%backref=section,
+	colorlinks=true,
+	linkcolor=red,
+	urlcolor=urlblue,
+	citecolor=citered,
+	anchorcolor=cyan,
+	filecolor=winered,
+	hyperfootnotes=true,
+	%linktocpage,
+]{hyperref}
+
+\hypersetup{
+	pdfborder={0 0 0},
+	%pdfproducer={},
+	pdfcreator={Markdown in LaTeX},
+	pdftitle={},
+	pdfsubject={},
+	pdfauthor={},
+	pdfkeywords={},
+} % 设置链接参数
+
+% Loading the Markdown Package
+\usepackage{markdown}
+\markdownSetup{
+    renderers = {
+        link = {\href{#3}{#1}},  % 定制链接样式 
+        image = {\begin{figure}[htb]
+            \centering
+            \includegraphics[width = .8\linewidth]{#3}%
+            \ifx\empty#4\empty\else
+            \caption{#4}\label{fig:#1}%
+            \fi
+        \end{figure}
+        }  % 重定义 Markdown 宏包中的图片环境
+    },
+    footnotes,
+    citations = true,
+    definitionLists,
+    hashEnumerators = true,  % 有序列表和无须列表
+    inlineFootnotes = true,  % 开启 ^[footnote text] 脚注
+    smartEllipses = true,
+    fencedCode = true,  % 支持 ``` 插入代码块
+    tightLists = false,
+    pipeTables = true,  % Markdown 表格
+    tableCaptions,
+    hybrid = true,  %  混合使用 Markdown 和 LaTeX
+}
+
+
+\begin{document}
+
+% Write Markdown in LaTeX
+%\begin{markdown}
+    % Markdown markup
+%\end{markdown}
+
+% Input Markdown file
+\markdownInput{md-input.md}
+
+% References
+\bibliography{refs}
+
+\end{document}

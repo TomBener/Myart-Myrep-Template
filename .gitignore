@@ -282,8 +282,15 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
-markdown-slides.markdown.in
-markdown-slides.markdown.lua
-_markdown_markdown-slides/
-markdown-slides.pdf
+md-slides.markdown.in
+md-slides.markdown.lua
+md-article.markdown.in
+md-article.markdown.lua
+_markdown_md-article/
+_markdown_md-slides/
+md-article.markdown.err
+
+# Specific PDFs
+md-article.pdf
+md-slides.pdf
 ownslides.pdf

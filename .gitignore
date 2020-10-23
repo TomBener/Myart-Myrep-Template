@@ -284,5 +284,6 @@ TSWLatexianTemp*
 #*Notes.bib
 markdown-slides.markdown.in
 markdown-slides.markdown.lua
-markdown-slides.pdf
 _markdown_markdown-slides/
+markdown-slides.pdf
+ownslides.pdf

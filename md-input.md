@@ -16,7 +16,7 @@ LaTeX 使用者都应该知道 dash, en-dash 和 em-dash。dash 是普通的连�
 
 ## 脚注
 
-欢迎查阅[我的主页](https://retompi.com)，希望[^1]你会喜欢^[这里有很多好东西哦！]。
+欢迎查阅[我的主页](https://retompi.com)，希望[^1]你会喜欢^[这是一个行内脚注]。
 
 [^1]: 这是一个脚注。
 
@@ -66,8 +66,8 @@ plt.show()
 
 ## 引用
 
-The TeXbook [@Knuth92] was written by @Knuth92.
+The TeXbook [see @Knuth92 1-5 and 10] was written by @Knuth92.
 
 Look the difference citekey entry:
 
-This template is powered by `markdown` package [@novotny17markdown]. And as you can see, @novotny17markdown is really amazing.
+This template [See @Simpson, p. 123 and 130] is powered by `markdown` package [@novotny17markdown]. And as you can see, @novotny17markdown is really amazing.

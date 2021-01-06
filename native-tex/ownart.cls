@@ -13,7 +13,7 @@
 \ProvidesClass{ownart}[ownart class]
 % Initiated on 2018/11/24, Last Updated on 2020/09/19
 
-\LoadClass[12pt, a4paper]{ctexart}
+\LoadClass[12pt, a4paper, fontset=none]{ctexart}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ctex 设置
 \ctexset{
@@ -225,7 +225,8 @@
 \RequirePackage{textcomp} % \textyen 人民币 ¥ 等符号
 \RequirePackage{fontawesome} % 添加各种图标 icon
 \RequirePackage[misc]{ifsym} % 生成 Springer 期刊中的邮箱符号 \Letter
-\RequirePackage[perpage]{footmisc} % 脚注扩展
+\RequirePackage{perpage} % 每页脚注单独编号
+\MakePerPage{footnote}  % \MakePerPage[2]{footnote}
 
 % 脚注编号使用带圈数字
 \RequirePackage{pifont}

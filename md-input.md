@@ -1,3 +1,8 @@
+---
+header-includes: |
+            \usepackage{hyperref}
+---
+
 
 # 我是 Markdown
 
@@ -42,7 +47,11 @@ plt.show()
 
 ### 图片
 
-![example-image](example-image.jpg "An example image")
+
+![This is the caption \label{myfigure}](example-image.png)
+
+See figure \ref{myfigure}.
+
 
 ### 表格
 
@@ -51,6 +60,19 @@ plt.show()
 | 1 | 张三 |
 | 2 | 李四 |
 | 3 | 王五 |
+
+This is a table:
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |   123  |
+|     1 | 1    | 1       |    1   |
+
+  : Demonstration of pipe table syntax.\label{mytable}
+
+Table \ref{mytable} shows bala…
+
 
 ## 数学公式
 
@@ -64,7 +86,8 @@ plt.show()
 
 以及，利用反斜线输出各种标点符号：\`foo\`, \*bar\*。
 
-## 引用
+
+## 文献引用
 
 The TeXbook [see @Knuth92 1-5 and 10] was written by @Knuth92.
 
